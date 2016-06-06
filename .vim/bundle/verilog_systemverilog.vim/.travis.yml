@@ -1,0 +1,16 @@
+language: c
+
+sudo: false
+
+os:
+  - linux
+
+before_script:
+  - cp test/test_vimrc ~/.vimrc
+  - cp -r ../verilog_systemverilog.vim ~/.vim
+
+script:
+  - make all
+
+after_failure:
+  - cat test-efm.log
