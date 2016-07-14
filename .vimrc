@@ -1,3 +1,4 @@
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -15,8 +16,29 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vhda/verilog_systemverilog.vim'
+Plugin 'tpope/vim-abolish'
 
+Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'vhda/verilog_systemverilog.vim'
+" set VerilogErrorFormat = msim 2 
+
+" if you use Vundle, load plugins:
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+let g:UltiSnipsSnippetsDir='~/.vim/snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,7 +74,7 @@ set hidden
 " set autowriteall
  
 " Better command-line completion
-set wildmenu
+" set wildmenu
  
 " Show partial commands in the last line of the screen
 set showcmd
@@ -115,10 +137,10 @@ set cmdheight=2
 set number
  
 " Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
+" set notimeout ttimeout ttimeoutlen=200
  
 " Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
+" set pastetoggle=<F11>
  
  
 "------------------------------------------------------------
@@ -128,8 +150,8 @@ set pastetoggle=<F11>
  
 " Indentation settings for using 4 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
  
 " Indentation settings for using hard tabs for indent. Display tabs as
@@ -150,8 +172,6 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
- 
-"------------------------------------------------------------"
 
-
+map <F7> mzgg=G`z
 
